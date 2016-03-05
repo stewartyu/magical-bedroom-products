@@ -6,7 +6,11 @@ var minicartItemTemplate = require('../../templates/partials/_minicart-item.tpl'
 var minicartItems = [];
 
 var addItemToCart = function(product) {
-    minicartItems.push(product);
+    if (!_.some(minicartItems, product)) {
+        minicartItems.push(product);
+    } else {
+        alert('You have already added this item to the cart.');
+    }
 };
 
 var renderMinicart = function() {
