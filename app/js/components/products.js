@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var _ = require('lodash');
+var minicart = require('./minicart');
 var productTemplate = require('../../templates/partials/_product.tpl');
 
 var allProducts = [];
@@ -19,6 +20,8 @@ var bindEvents = function() {
             return product.id === id;
         });
         var product = allProducts[index];
+
+        minicart.add(product);
     });
 };
 
@@ -30,5 +33,7 @@ module.exports = {
 
             allProducts = products;
         });
+
+        minicart.init();
     }
 };
