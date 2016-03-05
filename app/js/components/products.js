@@ -13,7 +13,7 @@ var showProducts = function(products) {
     });
 };
 
-var bindEvents = function() {
+var bindAddToCart = function() {
     $('.js-product__cta').on('click', function() {
         var id = parseInt($(this).attr('data-id'), 10);
         var index = _.findIndex(allProducts, function(product) {
@@ -29,7 +29,7 @@ module.exports = {
     init: function() {
         $.ajax('/products').done(function(products) {
             showProducts(products);
-            bindEvents();
+            bindAddToCart();
 
             allProducts = products;
         });
