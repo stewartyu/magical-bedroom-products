@@ -14,7 +14,11 @@ var showProducts = function(products) {
 
 var bindEvents = function() {
     $('.js-product__cta').on('click', function() {
-        var id = $(this).attr('data-id');
+        var id = parseInt($(this).attr('data-id'), 10);
+        var index = _.findIndex(allProducts, function(product) {
+            return product.id === id;
+        });
+        var product = allProducts[index];
     });
 };
 
