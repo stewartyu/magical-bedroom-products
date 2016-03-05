@@ -9,7 +9,21 @@ var addItemToCart = function(product) {
     minicartItems.push(product);
 };
 
-var showMinicartItems = function() {
+var renderMinicart = function() {
+    renderMinicartItems();
+
+    // update cart total
+    $('.js-minicart__count').html(minicartItems.length);
+
+    // update price total
+    var total = _.reduce(minicartItems, function(currentTotal, item) {
+        var currentPrice = parseInt(item.price.replace('$', ''), 10);
+        return currentTotal + currentPrice;
+    }, 0);
+    $('.js-minicart__total').html('$' + total);
+};
+
+var renderMinicartItems = function() {
     var $minicartItems = $('.js-minicart__items');
 
     var minicartItemsHtml = _.reduce(minicartItems, function(html, item) {
@@ -27,14 +41,14 @@ var bindRemoveMinicartItem = function() {
             return item.id === id;
         });
 
-        showMinicartItems();
+        renderMinicart();
     });
 };
 
 module.exports = {
     add: function(product) {
         addItemToCart(product);
-        showMinicartItems();
+        renderMinicart();
     },
     init: function() {
         bindRemoveMinicartItem();
