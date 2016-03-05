@@ -8,6 +8,7 @@ var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
 var jade = require('gulp-jade');
+var html = require('html-browserify');
 
 var server = jsonServer.start({
     data: 'data/db.json',
@@ -24,6 +25,7 @@ gulp.task('sass', function() {
 
 gulp.task('scripts', function() {
     return browserify('./app/js/app.js')
+        .transform(html)
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(buffer())
