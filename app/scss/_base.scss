@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $default-font-family;
+}
+
+body {
+    font-size: $standard-font-size;
+}
+
+h1 {
+    padding: $margin;
+
+    font-weight: bold;
+    font-size: $xlarge-font-size;
+}
