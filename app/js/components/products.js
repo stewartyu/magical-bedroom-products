@@ -5,7 +5,7 @@ var productTemplate = require('../../templates/partials/_product.tpl');
 
 var allProducts = [];
 
-var showProducts = function(products) {
+var renderProducts = function(products) {
     var $products = $('.js-products');
     _.map(products, function(product) {
         var compiledTemplate = _.template(productTemplate);
@@ -28,7 +28,7 @@ var bindAddToCart = function() {
 module.exports = {
     init: function() {
         $.ajax('/products').done(function(products) {
-            showProducts(products);
+            renderProducts(products);
             bindAddToCart();
 
             allProducts = products;
