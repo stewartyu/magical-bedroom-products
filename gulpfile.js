@@ -41,8 +41,9 @@ gulp.task('templates', function() {
 
 gulp.task('watch', function() {
     gulp.watch('./app/scss/**/*.scss', ['sass']);
-    gulp.watch('./app/js/**/*.js', ['scripts'])
-    gulp.watch('./app/templates/**/*.jade', ['templates'])
+    gulp.watch('./app/js/**/*.js', ['scripts']);
+    gulp.watch('./app/templates/**/*.tpl', ['scripts']);
+    gulp.watch('./app/templates/**/*.jade', ['templates']);
     gulp.watch(['db.json'], function(){
         server.reload();
     });
