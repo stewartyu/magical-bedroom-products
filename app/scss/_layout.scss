@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+}
+
+.products {
+    width: 66.6%;
+    padding: $margin;
+}
+
+.minicart {
+    width: 33.3%;
+    padding: $margin;
+}

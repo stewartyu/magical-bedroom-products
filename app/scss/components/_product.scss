@@ -1,0 +1,37 @@
+.product {
+    position: relative;
+
+    margin: $margin;
+    padding: $margin;
+    border-top: 1px solid $grey;
+}
+
+.product__header {
+    display: flex;
+    align-items: center;
+}
+
+.product__name {
+    width: 70%;
+    padding-right: $margin;
+}
+
+.product__price {
+    width: 30%;
+
+    font-weight: bold;
+}
+
+.product__main {
+    display: flex;
+    align-items: center;
+}
+
+.product__description {
+    width: 70%;
+    padding-right: $margin;
+}
+
+.product__cta {
+    width: 30%;
+}

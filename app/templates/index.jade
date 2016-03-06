@@ -6,15 +6,13 @@ html
         link(href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700', rel='stylesheet', type='text/css')
         link(rel='stylesheet', href='/css/stylesheet.css')
 
-body
-    h1 Magical Bedroom Products
+    body.container
+        .products.js-products
 
-    .products.js-products
+        .minicart.js-minicart
+            h3 Cart
+            .minicart__count.js-minicart__count 0
+            .minicart__items.js-minicart__items
+            .minicart__total.js-minicart__total $0
 
-    .minicart.js-minicart
-        h3 Cart
-        .minicart__count.js-minicart__count 0
-        .minicart__items.js-minicart__items
-        .minicart__total.js-minicart__total $0
-
-    script(src="/js/bundle.js")
+        script(src="/js/bundle.js")

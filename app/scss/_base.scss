@@ -11,8 +11,24 @@ body {
 }
 
 h1 {
-    padding: $margin;
+    padding: $margin 0;
 
     font-weight: bold;
     font-size: $xlarge-font-size;
+}
+
+h2 {
+    padding: $margin 0;
+
+    font-size: $xlarge-font-size;
+}
+
+button {
+    padding: $margin;
+    border: 0;
+
+    background-color: $purple;
+
+    color: $white;
+    font-size: $standard-font-size;
 }
