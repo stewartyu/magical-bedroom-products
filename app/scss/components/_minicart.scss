@@ -1,0 +1,25 @@
+.minicart {
+    margin: $margin;
+    padding: $margin;
+    border: 1px solid $grey;
+}
+
+.minicart__header {
+    display: flex;
+    align-items: center;
+}
+
+.minicart__title {
+    padding-right: $margin;
+}
+
+.minicart__count {
+    font-weight: bold;
+
+    &::before {
+        content: '(';
+    }
+    &::after {
+        content: ')';
+    }
+}
