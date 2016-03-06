@@ -39,7 +39,7 @@ var renderMinicartItems = function() {
 
     var minicartItemsHtml = _.reduce(minicartItems, function(html, item) {
         var compiledTemplate = _.template(minicartItemTemplate);
-        return compiledTemplate(item) + html;
+        return html + compiledTemplate(item);
     }, '');
 
     $minicartItems.html(minicartItemsHtml);
