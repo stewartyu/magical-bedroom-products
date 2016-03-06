@@ -1,13 +1,17 @@
 .container {
-    display: flex;
+    @include clearfix;
 }
 
 .products {
+    float: left;
+
     width: 66.6%;
     padding: $margin;
 }
 
 .minicart {
+    float: left;
+
     width: 33.3%;
     padding: $margin;
 }

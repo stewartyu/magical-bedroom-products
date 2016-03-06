@@ -1,15 +1,10 @@
 .minicart {
-    margin: $margin*2 $margin;
-    padding: $margin;
+    margin: $margin*2 0;
     border: 1px solid $grey;
 }
 
-.minicart__header {
-    display: flex;
-    align-items: center;
-}
-
 .minicart__title {
+    display: inline-block;
     padding-right: $margin/4;
 }
 

@@ -1,17 +1,11 @@
 .product {
-    position: relative;
-
     margin: $margin;
     padding: $margin;
     border-top: 1px solid $grey;
 }
 
-.product__header {
-    display: flex;
-    align-items: center;
-}
-
 .product__name {
+    display: inline-block;
     width: 70%;
     padding-right: $margin;
 }
@@ -23,16 +17,19 @@
 }
 
 .product__main {
-    display: flex;
-    align-items: center;
+    @include clearfix;
 }
 
 .product__description {
+    float: left;
+
     width: 70%;
     padding-right: $margin;
 }
 
 .product__cta {
+    float: left;
+
     width: 30%;
     padding: $margin;
 }

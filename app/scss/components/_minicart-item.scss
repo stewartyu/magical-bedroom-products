@@ -1,16 +1,20 @@
 .minicart-item {
-    display: flex;
-    align-items: center;
+    @include clearfix;
+
     margin: $margin 0;
     padding: $margin 0 0;
     border-top: 1px solid $grey;
 }
 
 .minicart-item__main {
+    float: left;
+
     width: 80%;
 }
 
 .minicart-item__secondary {
+    float: left;
+
     width: 20%;
 
     text-align: center;
@@ -21,6 +25,8 @@
 }
 
 .minicart-item__remove {
+    padding: 1px 7px 4px;
+
     border-radius: 20px;
     background-color: $orange;
 }
