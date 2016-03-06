@@ -7,7 +7,14 @@ var minicartItems = [];
 
 var addItemToCart = function(product) {
     if (!_.some(minicartItems, product)) {
-        minicartItems.push(product);
+        $.ajax({
+            url: '/cart_order',
+            type: 'POST',
+            data: product
+        }).done(function() {
+            minicartItems.push(product);
+            renderMinicart();
+        });
     } else {
         alert('You have already added this item to the cart.');
     }
@@ -41,20 +48,29 @@ var renderMinicartItems = function() {
 var bindRemoveMinicartItem = function() {
     $('.js-minicart').on('click', '.js-minicart-item__remove', function() {
         var id = parseInt($(this).attr('data-id'), 10);
-        minicartItems = _.reject(minicartItems, function(item) {
-            return item.id === id;
-        });
 
-        renderMinicart();
+        $.ajax({
+            url: '/cart_order/' + id,
+            type: 'DELETE'
+        }).done(function() {
+            minicartItems = _.reject(minicartItems, function(item) {
+                return item.id === id;
+            });
+
+            renderMinicart();
+        });
     });
 };
 
 module.exports = {
     add: function(product) {
         addItemToCart(product);
-        renderMinicart();
     },
     init: function() {
+        $.ajax('/cart_order').done(function(data) {
+            minicartItems = data;
+            renderMinicart();
+        });
         bindRemoveMinicartItem();
     }
 };
