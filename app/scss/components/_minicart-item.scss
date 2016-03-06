@@ -1,0 +1,26 @@
+.minicart-item {
+    display: flex;
+    align-items: center;
+    margin: $margin 0;
+    padding: $margin 0 0;
+    border-top: 1px solid $grey;
+}
+
+.minicart-item__main {
+    width: 80%;
+}
+
+.minicart-item__secondary {
+    width: 20%;
+
+    text-align: center;
+}
+
+.minicart-item__name {
+    padding: 0 0 $margin;
+}
+
+.minicart-item__remove {
+    border-radius: 20px;
+    background-color: $orange;
+}

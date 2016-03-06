@@ -1,5 +1,5 @@
 .minicart {
-    margin: $margin;
+    margin: $margin*2 $margin;
     padding: $margin;
     border: 1px solid $grey;
 }
@@ -10,7 +10,7 @@
 }
 
 .minicart__title {
-    padding-right: $margin;
+    padding-right: $margin/4;
 }
 
 .minicart__count {
@@ -22,4 +22,16 @@
     &::after {
         content: ')';
     }
+}
+
+.minicart__total {
+    margin-top: $margin;
+    padding-top: $margin;
+    border-top: 1px solid $grey;
+
+    font-size: $xlarge-font-size;
+}
+
+.minicart__amount {
+    font-weight: bold;
 }

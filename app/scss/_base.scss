@@ -27,8 +27,11 @@ h3 {
     font-size: $large-font-size;
 }
 
+h4 {
+    font-weight: bold;
+}
+
 button {
-    padding: $margin;
     border: 0;
 
     background-color: $purple;
