@@ -7,7 +7,6 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
-var jade = require('gulp-jade');
 var html = require('html-browserify');
 
 var server = jsonServer.start({
@@ -33,12 +32,6 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('./public/js'));
 });
 
-gulp.task('templates', function() {
-  gulp.src('./app/templates/**/*.jade')
-    .pipe(jade())
-    .pipe(gulp.dest('./public/'))
-});
-
 gulp.task('watch', function() {
     gulp.watch('./app/scss/**/*.scss', ['sass']);
     gulp.watch('./app/js/**/*.js', ['scripts']);
@@ -56,7 +49,6 @@ gulp.task('develop', function() {
 gulp.task('default', [
     'sass',
     'scripts',
-    'templates',
     'develop',
     'watch'
 ]);
